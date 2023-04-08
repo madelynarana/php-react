@@ -25,4 +25,15 @@ class DataBase{
 
         }
     }
+    function getAll( $sql ){
+        try {
+
+            $stmt = $this->Connection()->prepare( $sql );
+            $stmt->execute();
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        } catch (PDOException $e) {
+            echo 'Error: ' . $e->getMessage();
+        }
+    }
 }
