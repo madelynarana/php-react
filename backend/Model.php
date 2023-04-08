@@ -37,3 +37,15 @@ class DataBase{
         }
     }
 }
+
+// Modelo
+
+class  FlowerDao{
+    
+    function getAll(){
+
+        $dataBase = new DataBase;
+        return $dataBase->getAll('SELECT * FROM flower');
+
+    }
+}
